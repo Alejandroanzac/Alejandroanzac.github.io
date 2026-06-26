@@ -1,0 +1,22 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/portfolio', label: 'Portfolio' },
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand">Alejandro Anza</a>
+    <nav>
+      {
+        links.map((l) => (
+          <a href={l.href} class={path === l.href ? 'active' : ''}>
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

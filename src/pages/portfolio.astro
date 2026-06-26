@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => b.data.year - a.data.year);
+const categories = ['All', ...new Set(projects.map((p) => p.data.category))];
+---
+
+<Base title="Portfolio — Alejandro Anza">
+  <section class="block">
+    <h1>Portfolio</h1>
+    <p class="muted">All my projects. Filter by category.</p>
+
+    <div class="filters">
+      {
+        categories.map((c) => (
+          <button class={`filter-btn ${c === 'All' ? 'active' : ''}`} data-filter={c} type="button">
+            {c}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="grid" id="project-grid">
+      {
+        projects.map((p) => (
+          <ProjectCard
+            title={p.data.title}
+            category={p.data.category}
+            tech={p.data.tech}
+            year={p.data.year}
+            summary={p.data.summary}
+            repo={p.data.repo}
+            demo={p.data.demo}
+            cover={p.data.cover}
+            isPrivate={p.data.private}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('#project-grid .card');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      cards.forEach((card) => {
+        const match = filter === 'All' || card.dataset.category === filter;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+</script>

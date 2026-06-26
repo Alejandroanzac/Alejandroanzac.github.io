@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const featured = projects
+  .filter((p) => p.data.featured)
+  .sort((a, b) => b.data.year - a.data.year);
+
+const skills = ['Python', 'C++', 'HTML/CSS', 'Linux (Arch/CachyOS)', 'Neovim', 'Bash', 'Git'];
+---
+
+<Base title="Alejandro Anza — Software Engineering Student">
+  <section class="hero">
+    <h1>Alejandro Anza Cintora</h1>
+    <p class="role">Software Engineering Student</p>
+    <p class="pitch">
+      Software &amp; Computer Systems Engineering student blending real-world business
+      experience with a growing foundation in programming and systems design.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="/portfolio">View Portfolio →</a>
+      <div class="dropdown">
+        <button class="btn" type="button">Download CV ▾</button>
+        <div class="dropdown-menu">
+          <a href="/cv-en.pdf" target="_blank" rel="noopener">🇺🇸 English</a>
+          <a href="/cv-es.pdf" target="_blank" rel="noopener">🇲🇽 Español</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Summary</h2>
+    <p>
+      Software &amp; Computer Systems Engineering student at Universidad Iberoamericana del
+      Desarrollo (6th term), currently completing Harvard's CS50. I pair hands-on experience
+      from real commercial and ERP environments with personal projects in Python and systems
+      analysis — and I'm actively leveling up my English toward a backend / systems
+      development career.
+    </p>
+  </section>
+
+  <div class="two-col">
+    <section class="block">
+      <h2>Top Skills</h2>
+      <ul class="chips">
+        {skills.map((s) => <li>{s}</li>)}
+      </ul>
+    </section>
+    <section class="block">
+      <h2>Education</h2>
+      <p>
+        <strong>B.Eng. Software &amp; Computer Systems</strong><br />
+        Universidad Iberoamericana del Desarrollo · 2024–Present
+      </p>
+      <p>Harvard CS50 — Introduction to Computer Science <em>(in progress)</em></p>
+    </section>
+  </div>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>Highlights</h2>
+      <a class="link-more" href="/portfolio">See all projects →</a>
+    </div>
+    <div class="grid">
+      {
+        featured.map((p) => (
+          <ProjectCard
+            title={p.data.title}
+            category={p.data.category}
+            tech={p.data.tech}
+            year={p.data.year}
+            summary={p.data.summary}
+            repo={p.data.repo}
+            demo={p.data.demo}
+            cover={p.data.cover}
+            isPrivate={p.data.private}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Base>

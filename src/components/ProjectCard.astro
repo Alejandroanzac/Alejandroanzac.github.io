@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  tech: string[];
+  year: number;
+  summary: string;
+  repo?: string;
+  demo?: string;
+  cover?: string;
+  isPrivate?: boolean;
+}
+const { title, category, tech, year, summary, repo, demo, cover, isPrivate } = Astro.props;
+---
+
+<article class="card" data-category={category}>
+  {cover && <img class="card-cover" src={cover} alt={`${title} cover`} loading="lazy" />}
+  <div class="card-head">
+    <span class="badge">{category}</span>
+    <span class="year">{year}</span>
+  </div>
+  <h3 class="card-title">{title}</h3>
+  <p class="summary">{summary}</p>
+  <ul class="tech">
+    {tech.map((t) => <li>{t}</li>)}
+  </ul>
+  <div class="card-links">
+    {repo && <a href={repo} target="_blank" rel="noopener">Code →</a>}
+    {demo && <a href={demo} target="_blank" rel="noopener">Demo →</a>}
+    {isPrivate && <span class="private-badge">🔒 Private project</span>}
+  </div>
+</article>
