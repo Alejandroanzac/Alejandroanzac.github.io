@@ -15,6 +15,14 @@ const skills = [
   'Tkinter · PyInstaller', 'Cryptography · AES-256-GCM',
   'Windows Server · Active Directory', 'VMware',
 ];
+
+const learning = [
+  'Salesforce (AI Associate → Admin → App Builder)',
+  'SQL & Relational Databases',
+  'REST APIs',
+  'Harvard CS50',
+  'English B2 → C1',
+];
 ---
 
 <Base title="Alejandro Anza — Software Engineering Student">
@@ -64,6 +72,13 @@ const skills = [
       <p>Harvard CS50 — Introduction to Computer Science <em>(in progress)</em></p>
     </section>
   </div>
+
+  <section class="block">
+    <h2>Currently Learning</h2>
+    <ul class="chips">
+      {learning.map((s) => <li>⚡ {s}</li>)}
+    </ul>
+  </section>
 
   <section class="block">
     <div class="block-head">
