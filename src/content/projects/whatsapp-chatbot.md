@@ -5,7 +5,6 @@ tech: ["TypeScript", "Cloudflare Workers", "Durable Objects", "KV", "R2", "D1"]
 year: 2026
 summary: "Serverless WhatsApp chatbot that guides students through a support flow and hands complex cases off to human advisors. Contributed code review, a state-machine fix, and a payment-request feature."
 featured: true
-private: true
 # NOTE: No repo link on purpose — this is a private/confidential project.
 # Keep the client anonymous and confirm your exact role before publishing.
 # Raw notes live in ../../../private/chatbot-whatsapp/ (NOT deployed).
