@@ -1,4 +1,4 @@
-# Portfolio — Alejandro Anza
+# Portfolio - Alejandro Anza
 
 Personal portfolio + digital CV, built with [Astro](https://astro.build).
 
@@ -30,13 +30,13 @@ year: 2026
 summary: "One or two sentences describing it."
 repo: "https://github.com/Alejandroanzac/my-project"  # optional; omit if private
 featured: true             # show it on the Home "Highlights"
-private: false             # true = hide repo link, show a 🔒 badge
+private: false             # true = hide repo link, show a "Private project" badge
 ---
 
 Longer description here.
 ```
 
-That's it — the Home and Portfolio pages pick it up automatically.
+That's it. The Home and Portfolio pages pick it up automatically.
 
 ## Project structure
 

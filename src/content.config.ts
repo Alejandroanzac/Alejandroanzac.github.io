@@ -10,7 +10,7 @@ const projects = defineCollection({
     category: z.string(), // single category, used for the portfolio filter
     tech: z.array(z.string()), // tech tags shown on the card
     year: z.number(),
-    summary: z.string(), // 1–2 sentences shown on the card
+    summary: z.string(), // 1-2 sentences shown on the card
     repo: z.string().url().optional(), // omit for private projects
     demo: z.string().url().optional(),
     cover: z.string().optional(), // path under /public, e.g. "/images/foo.png"

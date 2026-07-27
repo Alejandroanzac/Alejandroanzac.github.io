@@ -1,5 +1,5 @@
 ---
-title: "SIGVI – Integrated Sales & Inventory Management System"
+title: "SIGVI - Integrated Sales & Inventory Management System"
 category: "Academic"
 tech: ["Systems Analysis", "OCR", "Requirements Engineering"]
 year: 2025
