@@ -42,15 +42,15 @@ That's it. The Home and Portfolio pages pick it up automatically.
 
 ```
 src/
-├── content/projects/   ← one .md per project (your data)
-├── content.config.ts   ← project schema
-├── pages/              ← index.astro (Home/CV) + portfolio.astro
-├── components/         ← Header, Footer, ProjectCard
+├── content/projects/   # one .md per project (your data)
+├── content.config.ts   # project schema
+├── pages/              # index.astro (Home/CV) + portfolio.astro
+├── components/         # Header, Footer, ProjectCard
 ├── layouts/Base.astro
 └── styles/global.css
 public/
-├── cv-en.pdf  cv-es.pdf ← downloadable CVs
-└── images/             ← project covers
+├── cv-en.pdf  cv-es.pdf # downloadable CVs
+└── images/             # project covers
 ```
 
 ## Deploy (free)

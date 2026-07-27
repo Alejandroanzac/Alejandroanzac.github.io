@@ -5,7 +5,7 @@ tech: ["Python", "Linux", "Neovim"]
 year: 2025
 summary: "Command-line tool built in Python with a Linux-terminal aesthetic for secure password generation, with customizable security criteria."
 featured: true
-# repo: "https://github.com/Alejandroanzac/REPO-NAME"  # ← add the real repo URL
+# repo: "https://github.com/Alejandroanzac/REPO-NAME"  # add the real repo URL
 ---
 
 A command-line password generator built in Python with a Linux-terminal aesthetic.

@@ -25,8 +25,8 @@ const { title, category, tech, year, summary, repo, demo, cover, isPrivate } = A
     {tech.map((t) => <li>{t}</li>)}
   </ul>
   <div class="card-links">
-    {repo && <a href={repo} target="_blank" rel="noopener">Code →</a>}
-    {demo && <a href={demo} target="_blank" rel="noopener">Demo →</a>}
+    {repo && <a href={repo} target="_blank" rel="noopener">View code</a>}
+    {demo && <a href={demo} target="_blank" rel="noopener">View demo</a>}
     {isPrivate && <span class="private-badge">Private project</span>}
   </div>
 </article>
