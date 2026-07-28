@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import portrait from '../assets/alejandro-anza.png';
 
 const projects = await getCollection('projects');
 const featured = projects
@@ -26,21 +28,34 @@ const learning = [
 
 <Base title="Alejandro Anza | Software Engineering Student">
   <section class="hero">
-    <h1>Alejandro Anza Cintora</h1>
-    <p class="role">Software Engineering Student</p>
-    <p class="pitch">
-      Software &amp; Computer Systems Engineering student blending real-world business
-      experience with a growing foundation in programming and systems design.
-    </p>
-    <div class="cta">
-      <a class="btn btn-primary" href="/portfolio">View Portfolio</a>
-      <div class="dropdown">
-        <button class="btn" type="button">Download CV (EN / ES)</button>
-        <div class="dropdown-menu">
-          <a href="/cv-en.pdf" target="_blank" rel="noopener">English</a>
-          <a href="/cv-es.pdf" target="_blank" rel="noopener">Español</a>
+    <div class="hero-text">
+      <h1>Alejandro Anza Cintora</h1>
+      <p class="role">Software Engineering Student</p>
+      <p class="pitch">
+        Software &amp; Computer Systems Engineering student blending real-world business
+        experience with a growing foundation in programming and systems design.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="/portfolio">View Portfolio</a>
+        <div class="dropdown">
+          <button class="btn" type="button">Download CV (EN / ES)</button>
+          <div class="dropdown-menu">
+            <a href="/cv-en.pdf" target="_blank" rel="noopener">English</a>
+            <a href="/cv-es.pdf" target="_blank" rel="noopener">Español</a>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="hero-photo">
+      <Image
+        src={portrait}
+        alt="Portrait of Alejandro Anza Cintora"
+        widths={[220, 440]}
+        sizes="(max-width: 720px) 150px, 220px"
+        loading="eager"
+        class="portrait"
+      />
     </div>
   </section>
 
