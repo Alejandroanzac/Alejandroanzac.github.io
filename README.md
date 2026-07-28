@@ -49,7 +49,7 @@ src/
 ├── layouts/Base.astro
 └── styles/global.css
 public/
-├── cv-en.pdf  cv-es.pdf # downloadable CVs
+├── CV-EN-Alejandro-Anza.pdf  CV-ES-Alejandro-Anza.pdf # downloadable CVs
 └── images/             # project covers
 ```
 
