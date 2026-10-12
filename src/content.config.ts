@@ -16,6 +16,7 @@ const projects = defineCollection({
     cover: z.string().optional(), // path under /public, e.g. "/images/foo.png"
     featured: z.boolean().default(false), // shows on the Home "Highlights"
     private: z.boolean().default(false), // hides repo link, shows a "Private" badge
+    order: z.number().default(99), // lower shows first (ties sorted by year, newest first)
   }),
 });
 

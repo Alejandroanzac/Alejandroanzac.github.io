@@ -8,21 +8,47 @@ import portrait from '../assets/alejandro-anza.png';
 const projects = await getCollection('projects');
 const featured = projects
   .filter((p) => p.data.featured)
-  .sort((a, b) => b.data.year - a.data.year);
+  .sort((a, b) => a.data.order - b.data.order || b.data.year - a.data.year);
 
 const skills = [
-  'Python', 'C', 'SQL', 'Node.js',
-  'JavaScript / TypeScript', 'Astro', 'HTML / CSS',
-  'Linux · Arch / CachyOS', 'Git & GitHub', 'Bash', 'Neovim',
-  'Tkinter · PyInstaller', 'Cryptography · AES-256-GCM',
-  'Windows Server · Active Directory', 'VMware',
+  'Python', 'C', 'JavaScript / TypeScript', 'Node.js · Fastify', 'React',
+  'SQL · SQL Server · PostgreSQL · SQLite', 'Prisma',
+  'Cloudflare Workers · D1 · Durable Objects', 'PWA · Offline-first sync',
+  'AI agents · Claude Code · MCP', 'n8n', 'Docker',
+  'Linux · systemd · Tailscale', 'Git & GitHub', 'Testing · Vitest · Playwright',
+  'Technical documentation', 'Astro', 'Cryptography · AES-256-GCM',
+  'Windows Server · Active Directory',
 ];
 
 const learning = [
-  'SQL & Relational Databases',
-  'REST APIs',
   'Harvard CS50',
   'English B2 to C1',
+  'AI agents & Model Context Protocol',
+  'Financial software (credit and banking systems)',
+];
+
+const experience = [
+  {
+    org: 'EFISYS',
+    role: 'IT Documentation · Implementation area',
+    place: 'Mérida, Yucatán',
+    dates: 'Aug 2026 - Present',
+    points: [
+      'Mexican software company for financial institutions (credit, savings and banking systems).',
+      'Write and standardize user manuals for the platform, unifying style and navigation instructions.',
+      'Professional internship project: simpler navigation guides built from the existing process flow diagrams, so customers find each screen faster.',
+    ],
+  },
+  {
+    org: 'Cklass',
+    role: 'General Associate to Sales Advisor, Motorcycle Department',
+    place: 'Tapachula, Chiapas',
+    dates: 'Aug 2025 - Mar 2026',
+    points: [
+      'Promoted to the motorcycle department in the first month; nominated for Area Manager after 5 months.',
+      'Hands-on with the company ERP and commercial software in daily sales operations.',
+    ],
+  },
 ];
 ---
 
@@ -32,8 +58,8 @@ const learning = [
       <h1>Alejandro Anza Cintora</h1>
       <p class="role">Software Engineering Student</p>
       <p class="pitch">
-        Software &amp; Computer Systems Engineering student blending real-world business
-        experience with a growing foundation in programming and systems design.
+        Software &amp; Computer Systems Engineering student building full-stack and AI projects,
+        backed by real-world business and IT documentation experience.
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="/portfolio">View Portfolio</a>
@@ -63,11 +89,34 @@ const learning = [
     <h2>Summary</h2>
     <p>
       Software &amp; Computer Systems Engineering student at Universidad Interamericana para el
-      Desarrollo (6th term), currently completing Harvard's CS50. I pair hands-on experience
-      from real commercial and ERP environments with personal projects in Python and systems
-      analysis, and I'm actively leveling up my English while building toward a Solutions Engineering
-      role in enterprise software, where technical depth and commercial experience reinforce each other.
+      Desarrollo (7th term), doing my professional internship in IT Documentation at EFISYS, a
+      financial-software company. I pair commercial and ERP experience with full-stack projects:
+      an offline-first app with a sandboxed AI agent, a sales dashboard for small businesses and
+      WhatsApp bots on Cloudflare. I'm leveling up my English while building toward a Solutions
+      Engineering role in enterprise software, where technical depth and commercial experience
+      reinforce each other.
     </p>
+  </section>
+
+  <section class="block">
+    <h2>Experience</h2>
+    {
+      experience.map((e) => (
+        <div class="job">
+          <div class="job-head">
+            <strong>{e.org}</strong>
+            <span class="muted">{e.place}</span>
+          </div>
+          <div class="job-head">
+            <em>{e.role}</em>
+            <em class="muted">{e.dates}</em>
+          </div>
+          <ul>
+            {e.points.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+      ))
+    }
   </section>
 
   <div class="two-col">
@@ -81,7 +130,7 @@ const learning = [
       <h2>Education</h2>
       <p>
         <strong>B.Eng. Software &amp; Computer Systems</strong><br />
-        Universidad Interamericana para el Desarrollo · 2024-Present
+        Universidad Interamericana para el Desarrollo · 2024-Present · 7th term
       </p>
       <p>Harvard CS50: Introduction to Computer Science <em>(in progress)</em></p>
     </section>

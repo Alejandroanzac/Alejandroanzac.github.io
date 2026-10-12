@@ -5,6 +5,7 @@ tech: ["Python", "Tkinter", "AES-256-GCM", "PBKDF2", "Syncthing"]
 year: 2026
 summary: "Cross-platform password manager (Windows/Linux) with an AES-256-GCM encrypted vault. Master password is never stored: it's derived on the fly via PBKDF2 with 600k iterations."
 featured: true
+order: 5
 repo: "https://github.com/Alejandroanzac/LockBox"
 ---
 

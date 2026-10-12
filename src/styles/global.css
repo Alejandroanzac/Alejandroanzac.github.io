@@ -252,3 +252,10 @@ h3 { font-size: 1.05rem; margin: 0; }
   .hero-photo:hover .portrait { transform: none; }
   .hero-photo:hover::after { transform: translate(12px, 12px); }
 }
+
+/* Experience */
+.job { margin-bottom: 16px; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.job ul { margin: 6px 0 0; padding-left: 1.2em; }
+.job li { margin: 2px 0; }

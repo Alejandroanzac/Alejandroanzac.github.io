@@ -4,7 +4,7 @@ category: "Academic"
 tech: ["Systems Analysis", "OCR", "Requirements Engineering"]
 year: 2025
 summary: "Systems-analysis project that diagnosed real inventory and sales inefficiencies and proposed an OCR-based solution with automated alerts and dual barcode scanning."
-featured: true
+featured: false
 ---
 
 Academic systems-analysis project based on real-world experience at a retail company.
